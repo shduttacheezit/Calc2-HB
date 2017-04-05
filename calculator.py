@@ -5,12 +5,15 @@ calculator program yourself in this file.
 """
 
 from arithmetic import *
+import sys
 
 
 # Your code goes here
 input_string = raw_input(">")
 tokens = input_string.split(" ")
-if tokens[0] == "+":
+if tokens[0] == "q":
+    sys.exit
+elif tokens[0] == "+":
     print add(int(tokens[1]), int(tokens[2]))
 elif tokens[0] == "-":  
     print subtract(int(tokens[1]), int(tokens[2]))
@@ -26,3 +29,5 @@ elif tokens[0] == "pow":
     print power(int(tokens[1]), int(tokens[2]))
 elif tokens[0] == "mod":
     print mod(int(tokens[1]), int(tokens[2]))
+else:
+    print "I don't understand"
