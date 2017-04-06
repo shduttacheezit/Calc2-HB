@@ -5,7 +5,6 @@ calculator program yourself in this file.
 """
 
 from arithmetic import *
-
 # Your code goes here
 
 while True:
@@ -14,11 +13,11 @@ while True:
     if tokens[0] == "q":
         break
     try:
-        i = len(tokens)
+        num_list = map(int, tokens[1:])
         num1 = int(tokens[1])
         num2 = int(tokens[-1])
         if tokens[0] == "+":
-            print add(num1, num2)
+            print add(num_list)
         elif tokens[0] == "-":
             print subtract(num1, num2)
         elif tokens[0] == "*":
@@ -33,7 +32,5 @@ while True:
             print power(num1, num2)
         elif tokens[0] == "mod":
             print mod(num1, num2)
-        else:
-            print "I don't understand"
     except:
         print "I don't understand"
